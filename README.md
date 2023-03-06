@@ -20,7 +20,7 @@ API in use (Big Thanks to free use) → [Open Meteo](https://open-meteo.com/)
 
 
 ## Features
-
+- Search city or location in all worlds.
 - Fast API load
 - Beautiful UI WeatherTemp.
 - Cross platform
