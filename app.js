@@ -104,7 +104,7 @@ searchInput.addEventListener('keyup', async (interact) => {
 			})
 		}
 	}
-})
+}, true)
 
 btngetLocation.addEventListener('click', () => {
 	WeatherAPIReport()
