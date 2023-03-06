@@ -64,7 +64,14 @@ nextBtn.addEventListener('click', () => {
 	document.getElementById('weather-carousel').scrollLeft += 200;
 })
 
-const logicsSearchInput = async (interact) => {
+/* Search Input Event Listner*/
+searchInput.addEventListener('click',() => {
+	ulDiv.classList.remove('hidden')
+})
+
+
+//Read Input user and fetch List city
+searchInput.addEventListener('keyup', async (interact) => {
 	ulDiv.classList.remove('hidden')
 
 	if ( document.getElementById('no-city') ) {
@@ -97,16 +104,7 @@ const logicsSearchInput = async (interact) => {
 			})
 		}
 	}
-}
-
-/* Search Input Event Listner*/
-searchInput.addEventListener('click',() => {
-	ulDiv.classList.remove('hidden')
 })
-
-
-//Read Input user and fetch List city
-searchInput.addEventListener('keyup', logicsSearchInput)
 
 btngetLocation.addEventListener('click', () => {
 	WeatherAPIReport()
