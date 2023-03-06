@@ -198,6 +198,9 @@ const clickCityList = () => {
                 document.querySelectorAll('#warn-message').forEach((element) =>{
                     element.classList.remove('activated')
                 })
+            
+                console.log(e.target.dataset.country);
+                console.log(e.target.dataset.city);
                 //location in left div
                 document.getElementById('current-location').innerText = e.target.dataset.country
                 document.getElementById('current-city-name').innerText = e.target.dataset.city
