@@ -114,12 +114,15 @@ const getCoordinate = () => {
             const latitude = success.coords.latitude
             const longitude = success.coords.longitude
             const coordination = `latitude=${latitude.toFixed(2)}&longitude=${longitude.toFixed(2)}`
-
+            
+            //left side location dom
             document.getElementById('current-city-name').innerText = `Long: ${longitude} Lati: ${latitude}`
+            document.getElementById('current-location').innerText = 'World'
 
             const data = JSON.parse(await getWeatherApi(coordination))
             const airdata = JSON.parse(await getAirQuality(coordination))
-
+            
+            //class declare
             WeatherData = new WeatherTemp(data)
             WeatherData.allData = data
             WeatherData.setAirdata = airdata
@@ -172,7 +175,7 @@ const clickCityList = () => {
                 }
             })
 
-//              if (e.target.dataset.coordinate === undefined){
+             if (e.target.dataset.coordinate === undefined){
                 
 //                 //if dom target is not found, alternative target mode.
 //                 if(e.explicitOriginalTarget.dataset.coordinate !== undefined){
@@ -185,12 +188,12 @@ const clickCityList = () => {
 //                     WeatherAPIReport(e.explicitOriginalTarget.dataset.coordinate)
 //                 }
 
-//                 //else not to try.
-//                 document.querySelectorAll('#warn-message').forEach((element) =>{
-//                     element.classList.add('activated')
-//                 })
-//                 return
-//             } else{
+                //else not to try.
+                document.querySelectorAll('#warn-message').forEach((element) =>{
+                    element.classList.add('activated')
+                })
+                return
+            } else{
                 //fetched results.
                 document.querySelectorAll('#warn-message').forEach((element) =>{
                     element.classList.remove('activated')
