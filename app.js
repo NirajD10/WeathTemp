@@ -71,7 +71,7 @@ const logicsSearchInput = async (interact) => {
         document.getElementById('no-city').remove()  //remove no-city found element
     }
 
-	if ( interact.target.textLength > 2 ) {
+	if ( interact.target.value.length > 2 ) {
 		loading.classList.remove('hidden')
 		//input user to list location
 		await getCityList(interact.target.value).then((data)=>{
@@ -106,7 +106,7 @@ searchInput.addEventListener('click',() => {
 
 
 //Read Input user and fetch List city
-searchInput.addEventListener('input', logicsSearchInput)
+searchInput.addEventListener('keyup', logicsSearchInput)
 
 btngetLocation.addEventListener('click', () => {
 	WeatherAPIReport()
