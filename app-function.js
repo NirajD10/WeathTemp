@@ -199,7 +199,7 @@ const clickCityList = () => {
                     element.classList.remove('activated')
                 })
             
-                console.log(e.target.dataset.country);
+                console.log(e);
                 console.log(e.target.dataset.city);
                 //location in left div
                 document.getElementById('current-location').innerText = e.target.dataset.country
