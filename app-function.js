@@ -203,7 +203,7 @@ const clickCityList = () => {
                 document.getElementById('current-city-name').innerText = e.target.dataset.city
 
                 WeatherAPIReport(e.target.dataset.coordinate)
-//             }
+            }
         })
     })
 }
