@@ -168,6 +168,8 @@ const clickCityList = () => {
     document.querySelectorAll('#location-fetched').forEach((el) => {
         //click listener
         el.addEventListener('click', (e) => {
+            e = e || window.e
+            
             //to remove warn message in case wrong way.
             document.querySelectorAll('warn-message').forEach((el) =>{
                 if(!el.hasAttribute('hidden')){
