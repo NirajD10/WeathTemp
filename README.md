@@ -1,5 +1,4 @@
 # WeathTemp
-A weather temperature website searched based by city or location.
 
 <p align="center">
   <img src="images/banner.png">
