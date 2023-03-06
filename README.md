@@ -34,4 +34,4 @@ API in use (Big Thanks to free use) → [Open Meteo](https://open-meteo.com/)
 For tailwindcss to edit `main.css`
 
 build css file
-    npm run dev
+    ```npm run dev```
