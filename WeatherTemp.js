@@ -33,7 +33,7 @@ class WeatherTemp {
     }
     
     #todayWeatherCode() {
-        return this.weathereport.current_weather.weathercode.toLowerCase()
+        return this.weathereport.current_weather.weathercode
     }
 
     #getUVIndex() {
