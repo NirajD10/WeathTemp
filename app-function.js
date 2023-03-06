@@ -172,25 +172,25 @@ const clickCityList = () => {
                 }
             })
 
-             if (e.target.dataset.coordinate === undefined){
+//              if (e.target.dataset.coordinate === undefined){
                 
-                //if dom target is not found, alternative target mode.
-                if(e.explicitOriginalTarget.dataset.coordinate !== undefined){
-                    document.querySelectorAll('#warn-message').forEach((element) =>{
-                        element.classList.remove('activated')
-                    })
+//                 //if dom target is not found, alternative target mode.
+//                 if(e.explicitOriginalTarget.dataset.coordinate !== undefined){
+//                     document.querySelectorAll('#warn-message').forEach((element) =>{
+//                         element.classList.remove('activated')
+//                     })
 
-                    document.getElementById('current-location').innerText = e.explicitOriginalTarget.dataset.country
-                    document.getElementById('current-city-name').innerText = e.explicitOriginalTarget.parentElement.dataset.city
-                    WeatherAPIReport(e.explicitOriginalTarget.dataset.coordinate)
-                }
+//                     document.getElementById('current-location').innerText = e.explicitOriginalTarget.dataset.country
+//                     document.getElementById('current-city-name').innerText = e.explicitOriginalTarget.parentElement.dataset.city
+//                     WeatherAPIReport(e.explicitOriginalTarget.dataset.coordinate)
+//                 }
 
-                //else not to try.
-                document.querySelectorAll('#warn-message').forEach((element) =>{
-                    element.classList.add('activated')
-                })
-                return
-            } else{
+//                 //else not to try.
+//                 document.querySelectorAll('#warn-message').forEach((element) =>{
+//                     element.classList.add('activated')
+//                 })
+//                 return
+//             } else{
                 //fetched results.
                 document.querySelectorAll('#warn-message').forEach((element) =>{
                     element.classList.remove('activated')
@@ -200,7 +200,7 @@ const clickCityList = () => {
                 document.getElementById('current-city-name').innerText = e.target.dataset.city
 
                 WeatherAPIReport(e.target.dataset.coordinate)
-            }
+//             }
         })
     })
 }
