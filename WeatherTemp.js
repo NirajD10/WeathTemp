@@ -311,9 +311,7 @@ const getWeatherCodeImage = (weatherFetchedcode,time,timezone) => {
     let arrayTime = time.split(":")
     //string to num conversion
     let arrNumTime = arrayTime.map(Number)
-    
-    console.log(arrNumTime[0])
-    console.log(timezone)
+   
 
     if(weatherdaynnight.includes(weatherFetchedcode) === true){
         if (timezone === 'AM') {
@@ -324,10 +322,8 @@ const getWeatherCodeImage = (weatherFetchedcode,time,timezone) => {
             }
         } else {
             if ( arrNumTime[0] >= 12 || arrNumTime[0] < 7){
-                console.log('Correct code')
                 return `${weatherFetchedcode}-day`
             } else {
-                console.log('incorrect code')
                 return `${weatherFetchedcode}-night`
             }
         }
