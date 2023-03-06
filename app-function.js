@@ -83,7 +83,7 @@ const RenderCityList = (CityList) => {
         citylistDiv.innerHTML = `
         <li id="location-fetched" class="hover:bg-light-grey cursor-pointer hidden">
                 <a id="location-select" class="dropdown-item inline-block p-2" href="#" data-coordinate="latitude=${element.latitude.toFixed(2)}&longitude=${element.longitude.toFixed(2)}" data-country="${element.country}" data-city="${element.name}">                                                           
-                <img class="inline-block h-6" src="images/country-flags/${element.country_code}.svg" title="${element.name}"/> 
+                <img class="inline-block h-6" src="images/country-flags/${element.country_code.toLowerCase()}.svg" title="${element.name}"/> 
                 ${element.name} <small class="text-muted">${element.admin1}(${element.latitude.toFixed(2)}°E ${element.longitude.toFixed(2)}°N ${element.elevation}m asl)</small>
             </a>
         </li> `
