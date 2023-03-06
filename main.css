@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+@layer components {
+    .weather-card{
+      @apply bg-white w-36 h-36 rounded-xl shadow flex flex-col shrink-0 justify-center items-center md:hover:scale-105 transition-transform ease-in-out 
+    }
+
+    .today-weather-report-card{
+        @apply bg-white w-76 h-52 rounded-2xl shadow
+    }
+}
+
+.search-city::placeholder,::-ms-input-placeholder {
+    color:black;
+    opacity: 1;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+}
+
+.bar{
+    height: 110px;
+    width: 40px;
+    border-radius: 25px;
+    border: 2px solid #c6c6c6;
+    padding: 0.2em;
+    --translatecir: 0px;
+}
+
+.bar::after{
+    content: '';
+    position: inherit;
+    transform: translateY(var(--translatecir)); /* 0 to 70 value */
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #0080ff;
+    animation: Bar 2s ease-in-out
+}
+
+@keyframes Bar {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(70px);
+    }
+    
+}
+
+.circular-graph{
+    position: relative;
+    width: 200px;
+    height: 100px;
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+    overflow: hidden;
+    --circular-deg: 0;
+}
+
+.circular-graph::before{
+    box-sizing: border-box;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:200px;
+    height:200px;
+    border: 30px solid;
+    border-color: #c6c6c6 #c6c6c6 #FFBF5E #FFBF5E;
+    border-radius: 50%;
+    transform: rotate(var(--circular-deg));   /*Value degree from -45deg to 135deg*/
+    /* transform: rotate(calc( 1deg * (-45 + var(--percentage) * 1.8))); */
+    animation: Circular 2s ease-in-out
+}
+
+@keyframes Circular {
+    0% {
+        transform: rotate(-45deg);
+    }
+
+    50%{
+        transform: rotate(135deg);
+    }
+}
+
+.hidden{
+    display: none;
+}
+
+.carousel{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.wait-bar{
+    transform: translateY(-60px);
+    transition: transform .3s ease-in;
+}
+
+.wait-bar.activated{
+    transform: translateY(0px);
+}
+
+.loader {
+    margin: 0 auto;
+    width: 48px;
+    height: 48px;
+    border: 5px solid #c6c6c6;
+    border-bottom-color: #FFBF5E;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+
+.spin-loading{
+    animation: fade-in 2s forwards;
+}
+
+    @keyframes fade-in {
+        0%{
+            opacity: 0;
+        }
+
+        100%{
+            opacity: 1;
+        }
+    }
