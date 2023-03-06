@@ -33,7 +33,7 @@ class WeatherTemp {
     }
     
     #todayWeatherCode() {
-        return this.weathereport.current_weather.weathercode
+        return this.weathereport.current_weather.weathercode.toLowerCase()
     }
 
     #getUVIndex() {
@@ -108,7 +108,7 @@ class WeatherTemp {
 
         //Weather Image Code 
         document.querySelectorAll('#status-code-icon').forEach((code) => {
-            code.src = `images/${getWeatherCodeImage(this.currentWeatherCode.toLowerCase() ,currentDay[1], currentDay[2])}.svg`
+            code.src = `images/${getWeatherCodeImage(this.currentWeatherCode ,currentDay[1], currentDay[2])}.svg`
         })
 
         //copy constructor from api weather code
@@ -116,7 +116,7 @@ class WeatherTemp {
         //7Day Weather Image Code
         const dailyWeatherCodeEl = document.querySelectorAll('#weekly-status-code')
         dailyWeatherCodeEl.forEach((code, key) => {
-            code.src = `images/${getWeatherCodeImage(this.sevenweatherdata.weatherCode[key].toLowerCase() ,currentDay[1], currentDay[2])}.svg`
+            code.src = `images/${getWeatherCodeImage(this.sevenweatherdata.weatherCode[key] ,currentDay[1], currentDay[2])}.svg`
         })
     }
 
