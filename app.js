@@ -106,7 +106,7 @@ searchInput.addEventListener('click',() => {
 
 
 //Read Input user and fetch List city
-searchInput.addEventListener('keyup', logicsSearchInput)
+searchInput.addEventListener('input', logicsSearchInput)
 
 btngetLocation.addEventListener('click', () => {
 	WeatherAPIReport()
